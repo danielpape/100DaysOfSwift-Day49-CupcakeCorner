@@ -12,7 +12,22 @@ struct CheckoutView: View {
     @ObservedObject var order = Order()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader{ geo in
+            ScrollView{
+                VStack(spacing: 16.0){
+                    Image("cupcakes")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geo.size.width)
+                    Text("Your total is £5")
+                        .font(.title)
+                    Button("Place Order"){
+                        
+                    }
+                }
+            }
+        }
+        .navigationBarTitle("Order details",displayMode: .inline)
     }
 }
 
