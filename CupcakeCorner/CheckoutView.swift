@@ -19,7 +19,7 @@ struct CheckoutView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geo.size.width)
-                    Text("Your total is £5")
+                    Text("Your total is $\(self.order.cost, specifier: "%.2f")")
                         .font(.title)
                     Button("Place Order"){
                         

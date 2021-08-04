@@ -37,5 +37,21 @@ class Order : ObservableObject {
             return false
         }
     }
+    
+    var cost:Double {
+        
+        var cost = Double(quantity)*2
+        cost += Double(type) / 2
+        
+        if extraFrosting{
+            cost += Double(quantity)
+        }
+        
+        if(addSprinkles){
+            cost += Double(quantity)/2
+        }
+        
+        return cost
+    }
 
 }
